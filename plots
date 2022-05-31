@@ -1,0 +1,78 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+iris = pd.read_csv('iris.csv')
+sns.scatterplot(x='sepallength',y='sepalwidth',hue='class',data=iris)
+
+-----------------
+import seaborn as sns
+import matplotlib.pyplot as plt
+iris = pd.read_csv("iris.csv")
+
+sns.heatmap(iris.corr(method='pearson').drop(['id'], axis=1).drop(['id'], axis=0),annot = True);
+
+plt.show()
+
+----------------
+def graph(y):
+	sns.boxplot(x="class", y=y, data=iris)
+
+plt.figure(figsize=(10,10))
+	
+# Adding the subplot at the specified
+# grid position
+plt.subplot(221)
+graph('sepallength')
+
+plt.subplot(222)
+graph('sepalwidth')
+
+plt.subplot(223)
+graph('petallength')
+
+plt.subplot(224)
+graph('petalwidth')
+
+plt.show()
+
+
+-------------------
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt 
+iris = pd.read_csv("iris.csv")
+#Drop id column
+iris = iris.drop('id',axis=1)
+sub=iris[iris['class']=='Iris-setosa']
+sns.kdeplot(x=iris.sepalwidth, y=iris.sepallength,cmap="plasma", shade=True, shade_lowest=False)
+plt.title('Iris-setosa')
+plt.xlabel('Sepal Length cm')
+plt.ylabel('Sepal Width cm')
+plt.show()
+
+
+----------------------
+from mpl_toolkits import mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# Creating dataset
+x = np.outer(np.linspace(-3, 3, 32), np.ones(32))
+y = x.copy().T # transpose
+z = (np.sin(x **2) + np.cos(y **2) )
+
+# Creating figure
+fig = plt.figure(figsize =(14, 9))
+ax = plt.axes(projection ='3d')
+
+# Creating plot
+ax.plot_surface(x, y, z)
+
+# show plot
+plt.show()
+
+
+---------------------------
+
