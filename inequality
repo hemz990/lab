@@ -1,0 +1,37 @@
+# Visualization of Schwartz's and Triangular Inequalities
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.array(list(map(int, input("Enter vector 1: ").split())))
+w = np.array(list(map(int, input("Enter vector 2: ").split())))
+
+# v = np.array([1,0])
+# w = np.array([1,2])
+
+# Plot w
+u=v+w;
+origin = [0], [0]
+plt.xlim(-2, 10)
+plt.ylim(-2, 8)
+name1="A+B"
+
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+mag_A = np.linalg.norm(v)
+mag_B = np.linalg.norm(w)
+mag_AB = np.linalg.norm(u)
+mag_ab=v@w
+
+print(f"Since |A| . |B| >=|A . B|\n{mag_A:.4f} . {mag_B:.4f} >= {mag_ab:.4f}")
+print("Hence it satisfies Schewartz Inequality")
+
+print(f"\nSince |A| + |B| >=|A + B|\n{mag_A:.4f} + {mag_B:.4f} >= {mag_AB:.4f}")
+print("Hence it satisfies Triangular Inequality")
+
+plt.quiver(*origin, *v,scale=1,units='xy',label=f"A: {mag_A}")
+plt.quiver(*origin, *w,scale=1,color='r',units='xy',label=f"B: {mag_B}")
+plt.quiver(*origin, *u,scale=1,color='g',units='xy',label=f"A+B: {mag_AB}")
+plt.legend()
+plt.grid()
+plt.show()
