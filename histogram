@@ -1,0 +1,30 @@
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.histplot(random.poisson(lam=2, size=1000))
+
+plt.show()
+
+
+--------------------------
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.distplot(random.normal(size=1000), hist=False)
+
+plt.show()
+
+
+--------------------------
+from numpy import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.distplot(random.chisquare(df=1, size=1000), hist=True)
+
+plt.show()
+
+
+----------------------------
