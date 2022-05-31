@@ -1,0 +1,27 @@
+# Visualization of Ax = y
+import matplotlib.pyplot as plt
+import numpy as np
+
+X = [0]
+Y = [0]
+y = np.array([1,0])
+A = np.array([[5,0],
+              [0,5]])
+
+A = np.linalg.inv(A)
+print(f"Inverse of A : {A}")
+x = A @ y
+print (f"x = A^(-1).y = {x}")
+# Plot y and x
+xecs = np.array([x,y])
+origin = [0], [0]
+
+# plt.axis('equal')
+plt.ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+plt.quiver(X,Y,[x[0]],[x[1]], color='orange',units='xy',scale=0.2)
+plt.quiver(X, Y, y[0],y[1], units='xy', scale=0.2)
+
+plt.xlim(-2, 5)
+plt.ylim(-2, 2.5)
+plt.grid()
+plt.show()
