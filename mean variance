@@ -1,0 +1,13 @@
+import numpy as np
+list = np.random.normal(size=1000)
+listp = np.random.poisson(size=1000)
+listc = np.random.chisquare(df=1, size=1000)
+print("mean:",np.average(list))
+print("variance: ",np.var(list))
+print("SD: ",np.std(list))
+print("mean:",np.average(listp))
+print("variance: ",np.var(listp))
+print("SD: ",np.std(listp))
+print("mean:",np.average(listc))
+print("variance: ",np.var(listc))
+print("SD: ",np.std(listc))
