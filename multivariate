@@ -1,0 +1,22 @@
+import pandas as pd
+iris = pd.read_csv('iris.csv')
+iris.head()
+
+iris.describe()
+
+iris.sample(10)
+
+iris.columns
+
+print(iris)
+
+print(iris[10:21])
+
+specific_data=iris[["id","sepallength"]]
+#data[["column_name1","column_name2","column_name3"]]
+ #now we will print the first 10 columns of the specific_data dataframe.
+print(specific_data.head(10))
+
+sumd = iris['sepallength'].sum()
+mean = iris['sepallength'].mean()
+print(sumd,mean)
